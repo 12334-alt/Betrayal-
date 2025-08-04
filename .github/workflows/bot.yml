@@ -26,7 +26,8 @@ jobs:
         uses: py-actions/py-dependency-install@v4.0.0
 
       - name: Injection For my Repo
-        run: sed -i "s/TokenTimeIsBackBuddyss/${{ secrets.LICHESS_KEY }}/g" config.yml
+        run: sed -i "s/TokenTimeIsBackBuddyss/\"${{ secrets.LICHESS_KEY }}\"/g" config.yml
+
 
       - name: Download and Extract Stockfish
         run: |
@@ -41,3 +42,4 @@ jobs:
       # Run the bot
       - name: Running bot
         run: python3 user_interface.py "matchmaking"
+
