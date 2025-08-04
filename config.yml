@@ -6,7 +6,7 @@ engines:
     name: "stockfish-ubuntu-x86-64-avx2"                     # Binary name of the engine to use.
     ponder: true                       # Think on opponent's time.
     silence_stderr: false                 # Suppresses stderr output.
-    move_overhead_multiplier: 21.0  # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
+    move_overhead_multiplier: 23.0  # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
     uci_options:                          # Arbitrary UCI options passed to the engine. (Commenting allowed)
       Threads: 8                          # Max CPU threads the engine can use.
       Hash: 2048                    # Max memory (in megabytes) the engine can allocate.
@@ -132,7 +132,7 @@ resign:
   against_humans: false                    # Activate whether these settings should apply against humans.
 
 challenge:                                # Incoming challenges. (Commenting allowed)
-  concurrency: 2                          # Number of games to play simultaneously.
+  concurrency: 1                          # Number of games to play simultaneously.
   bullet_with_increment_only: false       # Whether bullet games against BOTs should only be accepted with increment.
 # min_increment: 0                        # Minimum amount of increment to accept a challenge.
 # max_increment: 180                      # Maximum amount of increment to accept a challenge.
@@ -164,7 +164,7 @@ challenge:                                # Incoming challenges. (Commenting all
 #   - rated                               # Rated games
 
 matchmaking:
-  delay: 60                               # Time in seconds the bot must be idle before a new challenge is started.
+  delay: 30                               # Time in seconds the bot must be idle before a new challenge is started.
   timeout: 30                             # Time until a challenge is canceled.
   selection: cyclic                       # Matchmkaing type selection is one of "weighted_random", "sequential" or "cyclic
   types:                                  # Matchmaking types of which one is selected before each game.
